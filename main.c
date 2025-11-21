@@ -18,7 +18,9 @@ int main(){
         int taille = sizeof(table) / sizeof(table[0]);
         printf("Tables disponibles : ");
         for (int i = 0; i < taille; i += 1){
-            printf("%d ", table[i]);
+            if (table[i] != 0){
+                printf("%d ", table[i]);
+            }
         }
         printf("\nQuel table voulez vous prendre ? ");
         scanf("%d", &choix_table);
