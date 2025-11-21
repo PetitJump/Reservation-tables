@@ -15,7 +15,7 @@ int main(){
     int choix_table;
 
     while (strcmp(rep, "oui") == 0){
-        afficher_tables(table);
+        afficher_tables(*table);
         printf("Quel table voulez vous prendre ? ");
         scanf("%d", &choix_table);
 
