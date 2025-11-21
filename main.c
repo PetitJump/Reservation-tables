@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-int mise_a_jour_tables(int tables, int choix){
-
+int mise_a_jour_tables(int *tables, int taille, int choix){
+    for (int i = 0; i < taille; i += 1){
+        if (tables[i] == choix){
+            tables[i] = 0;
+        }
+    }
 }
 
 int main(){
@@ -19,7 +23,7 @@ int main(){
         printf("\nQuel table voulez vous prendre ? ");
         scanf("%d", &choix_table);
 
-        mise_a_jour_tables(*table, choix_table);
+        mise_a_jour_tables(table, taille, choix_table);
         
         printf("Voulez vous continuer ? (oui/non) : ");
         scanf("%s", rep);
