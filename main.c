@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void afficher_tables(int tables){
-
-}
-
 int mise_a_jour_tables(int tables, int choix){
 
 }
@@ -15,8 +11,12 @@ int main(){
     int choix_table;
 
     while (strcmp(rep, "oui") == 0){
-        afficher_tables(*table);
-        printf("Quel table voulez vous prendre ? ");
+        int taille = sizeof(table) / sizeof(table[0]);
+        printf("Tables disponibles : ");
+        for (int i = 0; i < taille; i += 1){
+            printf("%d ", table[i]);
+        }
+        printf("\nQuel table voulez vous prendre ? ");
         scanf("%d", &choix_table);
 
         mise_a_jour_tables(*table, choix_table);
